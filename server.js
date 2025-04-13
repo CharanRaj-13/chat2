@@ -46,7 +46,7 @@ io.on("connection", (socket) => {
   socket.on("send_message", ({ roomCode, username, message }) => {
     const timestamp = new Date().toLocaleTimeString();
     const messageData = { username, message, timestamp };
-    console.log(`[${timestamp}] ${username} in room ${roomCode}: ${message}`
+    console.log(`[${timestamp}] ${username} in room ${roomCode}: ${message}`);
     io.to(roomCode).emit("receive_message", messageData);
   });
 
